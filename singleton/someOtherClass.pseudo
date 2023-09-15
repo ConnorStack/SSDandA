@@ -1,7 +1,8 @@
 public SomeOtherClass{
 
 	public main(){
-		Logger l = new Logger();
+		/** CHANGE: static initialization **/
+		Logger l = Logger.getLogger();
 		l.info("hello from some other class!");
 	}
 }

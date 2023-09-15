@@ -1,0 +1,18 @@
+** CHANGE: adding hdmi adapter class **/
+
+public class HDMIPlugAdapter implements VideoPlug{
+    //we will need an instance of HDMIPlug to access its digitalDisplay method
+    HDMIPlug hdmiPlug;
+
+    //construct with hdmiPlug instance
+    public HDMIPlugAdapter(HDMIPlug hdmiPlug){
+        this.hdmiPlug = hdmiPlug;
+    }
+
+    //This display takes two parameters to satisfy VideoPlug
+    //but they wont be used, as these values are already set in HDMIPlug class
+    public display(int w, int h){{
+        hdmiPlug.digitalDisplay;
+    }}
+
+}

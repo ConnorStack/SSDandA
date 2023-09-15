@@ -1,11 +1,19 @@
 //  Modify this class so it uses the HDMIPlug's 
 // digitalDisplay() implementation. Note that you 
 // still must use a VidePlug (i.e., don't just replace
-// plug with an HDMIPlug object.
+// plug with an HDMIPlug object.)
 
 public class VideoSocket {
 
 	public main(){
+
+		//create instance of HDMIPlug
+		HDMIPlug hdmiPlug = new HDMIPlug();
+		//Since HDMIPlug extends VideoPlug, we can make an instance of VideoPlug
+		//then create an instance of HDMIPlugAdapter, and pass the hdmiPlug object
+		VideoPlug adapter = new HDMIPlugAdapter(hdmiPlug);
+
+
 		// plug MUST be of type VideoPlug
 		VideoPlug plug = new VGAPlug();
 

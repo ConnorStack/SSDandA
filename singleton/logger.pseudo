@@ -1,7 +1,21 @@
 public class Logger {
 	private String log;
+
+	/** CHANGE: private static instance variable, used by getLogger **/
+	private static Logger uniqueLogger;
+
 	// Constructor
-	public Logger(){
+	/** CHANGE: constructor should be private **/
+	private Logger(){
+		//appropriate code here...
+	}
+
+	/** CHANGE: We want a public static getLogger to create a logger only if it hasn't been created already **/
+	public static getLogger(){
+		if(uniqueLogger == null){
+			uniqueLogger = new Logger();
+		}
+		return uniqueLogger;
 	}
 
 	// Log something
